@@ -4,9 +4,10 @@
 class Relay{
   public:
     Relay(int pin);
-    bool getRelayOn();
+    bool getRelayState();
     void setRelayOn();
     void setRelayOff();
+    void toggle();
   private:
     int _pin; 
 };

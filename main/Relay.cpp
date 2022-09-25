@@ -5,7 +5,7 @@ Relay::Relay(int pin){
   pinMode(pin,OUTPUT);
   _pin = pin;
 };
-bool Relay::getRelayOn(){
+bool Relay::getRelayState(){
   return digitalRead(_pin);
 };
 void Relay::setRelayOn(){
@@ -14,6 +14,15 @@ void Relay::setRelayOn(){
 void Relay::setRelayOff(){
   digitalWrite(_pin, LOW);
 };
+
+void Relay::toggle(){
+  if(digitalRead(_pin) == HIGH){
+    digitalWrite(_pin,LOW);
+  }
+  else{
+    digitalWrite(_pin,HIGH);
+  }
+}
 
  /*
 // Pin definitions
